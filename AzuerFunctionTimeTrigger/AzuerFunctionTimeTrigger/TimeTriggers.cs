@@ -8,7 +8,7 @@ namespace AzuerFunctionTimeTrigger
     public static class TimeTriggers
     {
         [FunctionName("TimeTriggers")]
-        public static void Run([TimerTrigger("010 * * * * *")]TimerInfo myTimer, TraceWriter log)
+        public static void Run([TimerTrigger("0/10 * * * * *")]TimerInfo myTimer, TraceWriter log)
         {
             log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 
