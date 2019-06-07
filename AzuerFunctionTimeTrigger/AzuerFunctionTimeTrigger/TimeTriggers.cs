@@ -8,7 +8,7 @@ namespace AzuerFunctionTimeTrigger
     public static class TimeTriggers
     {
         [FunctionName("TimeTriggers")]
-        public static void Run([TimerTrigger("0/1 * * * * *")]TimerInfo myTimer, TraceWriter log)
+        public static void Run([TimerTrigger("010 * * * * *")]TimerInfo myTimer, TraceWriter log)
         {
             log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 
@@ -16,19 +16,19 @@ namespace AzuerFunctionTimeTrigger
 
             Console.WriteLine(guid);
 
-            string path = $@"C:\Users\KOKU-DEV\Desktop\Test\MyTest-{guid}.txt";
+           // string path = $@"C:\Users\KOKU-DEV\Desktop\Test\MyTest-{guid}.txt";
 
-            if (!File.Exists(path))
-            {
-                // Create a file to write to.
-                for (int i = 0; i < 10000; i++)
-                {
-                    using (StreamWriter sw = new StreamWriter(path, true))
-                    {
-                        sw.WriteLine($"Hello : {i} " + DateTime.Now);
-                    }
-                }
-            }
+           // if (!File.Exists(path))
+           // {
+           //     // Create a file to write to.
+           //     for (int i = 0; i < 10000; i++)
+           //     {
+           //         using (StreamWriter sw = new StreamWriter(path, true))
+           //         {
+           //             sw.WriteLine($"Hello : {i} " + DateTime.Now);
+           //         }
+           //     }
+           // }
         }
     }
 }
